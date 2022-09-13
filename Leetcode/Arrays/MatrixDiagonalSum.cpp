@@ -2,13 +2,12 @@ https://leetcode.com/problems/matrix-diagonal-sum/
 
 class Solution {
 public:
-    int diagonalSum(vector<vector<int>>& mat) {
-        int n = mat.size();
-        int sum = 0;
+     int diagonalSum(vector<vector<int>>& mat) {
+        int n=mat.size(),ans=0;
         for(int i=0;i<n;i++){
-            sum+=mat[i][i];
-            if(i!=n-i-1) sum+=mat[i][n-i-1];
+            if(i!=n-i-1) ans+=mat[i][i]+mat[i][n-i-1];
+            else ans+=mat[i][i];   
         }
-        return sum;
+        return ans;
     }
-};
+};;
